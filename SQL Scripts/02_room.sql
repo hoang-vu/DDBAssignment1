@@ -6,6 +6,7 @@ CREATE TABLE room (
       CONSTRAINT chk_room_type
 	  CHECK (room_type in ('Single', 'Double', 'Queen', 'King', 'Studio', 'Suite')),
    room_price        Number(8,2) NOT NULL,
+   room_occupancy   Number(1) NOT NULL,
    room_description  Varchar2(255),
    CONSTRAINT pk_room PRIMARY KEY (room_id),
    CONSTRAINT uk_room UNIQUE (hotel_id, room_number),
